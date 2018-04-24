@@ -3,8 +3,8 @@
 		"id": "man_woman",
 		"name": "Gender analogies",
 		"words": [
-				["nam", "nữ"],
-				["trai", "gái"]
+				["của", "và"],
+				 ["trong", "có"]
 				],
 		"xAxis": ["của", "và"],
 		"yAxis": ["trong", "có"]
