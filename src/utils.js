@@ -12,8 +12,11 @@ function dotNorm(a, b)
 {
 //	console.log("dotnorm a ", a);
 //	console.log("b: ", b);
+// 	console.log("a " + JSON.stringify(a));
+// 	console.log("b" + JSON.stringify(b));
 	var ret = 0;
 	for (var i = 0; i < a.length; i++) {
+
 		ret += a[i]*b[i]/(vlen(a)*vlen(b));
 	}
 	return ret;
@@ -53,12 +56,14 @@ function getWithAxes(vecs, words, a, b)
 {
 	wordsKeys = Object.keys(words);
 	var plotData = [];
+	// console.log("a" + JSON.stringify(a));
+	// console.log("b" + JSON.stringify(b));
 	for (var i = 0; i < wordsKeys.length; i++)
 	{
 		plotData.push({
 			word: wordsKeys[i],
-			a_axis: dotNorm(vecs[wordsKeys[i]], a),
-			b_axis: dotNorm(vecs[wordsKeys[i]], b),
+			a_axis: dotNorm(getvector(wordsKeys[i]), a),
+			b_axis: dotNorm(getvector(wordsKeys[i]), b),
 			group: words[wordsKeys[i]]
 		});
 	}
@@ -67,12 +72,26 @@ function getWithAxes(vecs, words, a, b)
 
 
 function getvector(word) {
-	var data;
-	var url = "http://192.168.9.72:8000/polls/vector_one_word?vector_one_word=" + words;
-	d3.json(url, function(ds) {
-		data = ds;
-	});
+	var data   ;
+	var url = "http://192.168.9.72:8000/polls/vector_one_word?vector_one_word=" + word;
+	// d3.json(url, function(ds) {
+	// 	data = ds;
+	// });
+
+    $.ajax({
+        type: "GET",
+        url: url,
+        async: false,
+        success : function(ds) {
+            data =  JSON.parse(ds);
+            console.log(ds);
+            console.log(typeof data);
+        }
+    });
+
+
 	return data
+
 }
 
 

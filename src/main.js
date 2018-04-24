@@ -1,14 +1,13 @@
 "use strict";
-var words = "a"
-var url = "http://192.168.9.72:8000/polls/vector_one_word?vector_one_word=" + words;
-// var vec_nam = d3.json(url)
-d3.json(url, function(ds) {
-	var data = ds;
-	// console.log(ds);
-});
+// var data;
+// var words = "của";
+// var url = "http://192.168.9.72:8000/polls/vector_one_word?vector_one_word=" + words;
+// d3.json(url, function(ds) {
+// 	data = ds;
+// });
 
 
-d3.csv("https://raw.githubusercontent.com/doannam020293/data_word2vec/master/df_test_vector.csv", callback);
+d3.csv("https://raw.githubusercontent.com/doannam020293/word2viz-master/master/df_test_vector.csv", callback);
 // d3.csv("https://drive.google.com/file/d/1vQUNCP59fVl3HkJRZJI9fjwtcfv6WOL6/view?usp=sharing", callback);
 
 var vecs = {};
@@ -24,7 +23,7 @@ function callback(data) {
 		}
 		vecs[data[i][0]] = vec;
 	}
-	d3.json("https://raw.githubusercontent.com/doannam020293/data_word2vec/master/word_selections.json",callback1);
+	d3.json("https://raw.githubusercontent.com/doannam020293/word2viz-master/master/word_selections.json",callback1);
 }
 
 function callback1(errors, rawData) {
@@ -45,6 +44,7 @@ function callback1(errors, rawData) {
 		d3.select("#Xaxis1").node().value = currentExample.xAxis[1];
 		d3.select("#Yaxis0").node().value = currentExample.yAxis[0];
 		d3.select("#Yaxis1").node().value = currentExample.yAxis[1];
+		// currentPoints = getWithAxesJson(vecs, currentExample);
 		currentPoints = getWithAxesJson(vecs, currentExample);
 		updateExample(currentExample);
 
@@ -163,10 +163,15 @@ function callback1(errors, rawData) {
 	function checkForErrors (newWordsList) {
 		var errorMsg = "";
 		newWordsList.forEach (function (newWord) {
+			var vector = getvector(newWord);
+			// if (vector =="error") {
+			// 	alert("No vector values for word " + exampleData.words[j][u] + "." );
+			// }
+
 			if (newWord.length == 0) {
 				errorMsg = errorMsg + "\nEnter a non-empty word.";
 			}
-			else if (!(newWord in vecs)) {
+			else if (vector =="error") {
 				errorMsg = errorMsg + "\nWord \"" + newWord + "\" not in the dictionary.";
 			}
 		})

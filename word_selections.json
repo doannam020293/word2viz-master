@@ -3,10 +3,14 @@
 		"id": "man_woman",
 		"name": "Gender analogies",
 		"words": [
-				["của", "và"],
-				 ["trong", "có"]
+				["trai", "gái"],
+                ["công_chúa", "hoàng_tử"],
+                ["anh","chị"],
+                ["bố","mẹ"],
+                ["chú","cô"]
+
 				],
-		"xAxis": ["của", "và"],
-		"yAxis": ["trong", "có"]
+		"xAxis": ["trai", "gái"],
+		"yAxis": ["công_chúa", "hoàng_tử"]
 	}
 ]
