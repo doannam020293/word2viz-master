@@ -3,7 +3,7 @@
 		"id": "man_woman",
 		"name": "Gender analogies",
 		"words": [
-				["trai", "gái"],
+				["hoàng_đế", "hoàng_hậu"],
                 ["công_chúa", "hoàng_tử"],
                 ["anh","chị"],
                 ["bố","mẹ"],
@@ -11,6 +11,6 @@
 
 				],
 		"xAxis": ["trai", "gái"],
-		"yAxis": ["công_chúa", "hoàng_tử"]
+		"yAxis": ["phụ_nữ", "hoàng_hậu"]
 	}
 ]
