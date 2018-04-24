@@ -1,0 +1,10 @@
+.DS_Store
+.ipynb_checkpoints
+*.csv
+*.zip
+*.gz
+*.tar
+
+__pycache__/
+data/
+lib/

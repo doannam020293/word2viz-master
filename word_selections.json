@@ -1,0 +1,12 @@
+[
+	{
+		"id": "man_woman",
+		"name": "Gender analogies",
+		"words": [
+				["nam", "nữ"],
+				["trai", "gái"]
+				],
+		"xAxis": ["của", "và"],
+		"yAxis": ["trong", "có"]
+	}
+]

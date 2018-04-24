@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f68280b3-8e0c-407a-9cfd-2606778af1f2" name="MyRemoteServer" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="C:\Users\Windows 10 TIMT\OneDrive\Nam\OneDrive - Five9 Vietnam Corporation\work\pycharm_project\word2viz-master" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
